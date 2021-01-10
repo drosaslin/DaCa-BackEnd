@@ -1,1 +1,1 @@
-web: gunicorn daca.wsgi
+web: gunicorn backend.daca.wsgi
