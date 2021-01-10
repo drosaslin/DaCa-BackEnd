@@ -25,7 +25,7 @@ SECRET_KEY = 'exui_8d79j!q!#w3wgrlrz19#u9ags!tjtajbk#_ry1y=&r)z9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','daca.herokuapp.com']
 
 
 # Application definition
