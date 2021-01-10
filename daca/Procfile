@@ -1,1 +1,1 @@
-web: gunicorn daca.wsgi --log-file - i
+web: gunicorn daca.wsgi:application --log-file -i
