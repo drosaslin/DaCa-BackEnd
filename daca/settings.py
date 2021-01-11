@@ -63,7 +63,7 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'USER_ID_FIRLED': 'username'
+    'USER_ID_FIELD': 'username'
 }
 
 REST_AUTH_REGISTER_SERIALIZERS = {
