@@ -12,5 +12,6 @@ sqlparse==0.4.1
 zipp==3.4.0
 zope.interface==5.2.0
 django-allauth
-djangorestframework-simplejwt==1.7.1
 django-rest-auth
+jwt==1.7.1
+djangorestframework_simplejwt==4.5.0
