@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'api'
 ]
 
-USER_ID_FIRLED = 'username'
 AUTH_USER_MODEL = 'api.User'
 ACCOUNT_EMAIL_REQUIRED = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -61,6 +60,10 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
+}
+
+SIMPLE_JWT = {
+    'USER_ID_FIRLED': 'username'
 }
 
 REST_AUTH_REGISTER_SERIALIZERS = {
