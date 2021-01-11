@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'api'
 ]
 
+USER_ID_FIRLED = 'username'
 AUTH_USER_MODEL = 'api.User'
 ACCOUNT_EMAIL_REQUIRED = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
