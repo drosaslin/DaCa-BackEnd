@@ -67,7 +67,11 @@ SIMPLE_JWT = {
 }
 
 REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'api.serializers.CustomRegisterSerializer'
+    'REGISTER_SERIALIZER': 'api.serializers.CustomRegisterSerializer',
+}
+
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'api.serializers.CustomUserDetailsSerializer'
 }
 
 DATE_INPUT_FORMATS = [
