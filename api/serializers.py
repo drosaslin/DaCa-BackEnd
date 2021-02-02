@@ -1,3 +1,4 @@
+from .models import TravelReview
 from rest_framework import serializers
 from rest_auth.registration.serializers import RegisterSerializer
 from rest_auth.serializers import UserDetailsSerializer
@@ -21,4 +22,8 @@ class CustomUserDetailsSerializer(UserDetailsSerializer):
 
     class Meta(UserDetailsSerializer.Meta):
         fields = UserDetailsSerializer.Meta.fields + ('gender','birthday',)
-    
+
+class CreateTravelReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TravelReview
+        fields = ['username', 'title', 'review', 'rating']

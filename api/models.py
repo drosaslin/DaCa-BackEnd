@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import date
+from datetime import date, datetime
 from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
@@ -13,3 +13,12 @@ class User(AbstractUser):
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'email', 'gender', 'birthday', 'password']
+
+class TravelReview(models.Model):
+    id = models.AutoField(primary_key=True)
+    username = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    title = models.CharField(max_length=40, null=False)
+    review = models.CharField(max_length=500, null=True)
+    rating = models.FloatField(default=2.5)
+    date = models.DateTimeField(default=datetime.now())
+
