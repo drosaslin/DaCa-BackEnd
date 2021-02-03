@@ -16,9 +16,9 @@ class User(AbstractUser):
 
 class TravelReview(models.Model):
     id = models.AutoField(primary_key=True)
-    username = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    # username = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    place_id = models.CharField(max_length=200)
     title = models.CharField(max_length=40, null=False)
     review = models.CharField(max_length=500, null=True)
     rating = models.FloatField(default=2.5)
     date = models.DateTimeField(default=datetime.now())
-

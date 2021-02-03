@@ -26,4 +26,4 @@ class CustomUserDetailsSerializer(UserDetailsSerializer):
 class CreateTravelReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = TravelReview
-        fields = ['username', 'title', 'review', 'rating']
+        fields = ['title', 'place_id', 'review', 'rating', 'date']
