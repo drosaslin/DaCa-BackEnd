@@ -15,6 +15,6 @@ class TokenView(APIView):
 
         return Response(encoded_jwt)
 
-class TravelReviewView(generics.ListCreateAPIView):
+class TravelReviewView(generics.ListCreateAPIView, generics.DestroyAPIView):
     queryset = TravelReview.objects.all()
     serializer_class = CreateTravelReviewSerializer
