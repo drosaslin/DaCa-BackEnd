@@ -10,11 +10,8 @@ class TokenView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def get(self, request, *args, **kwargs):
-        secret = 'secret'
-        encoded_jwt = jwt.encode({'user': 'drosaslin', 'role': 'admin'}, secret, algorithm='HS256')
+        return Response(request.user.username)
 
-        return Response(encoded_jwt)
-
-class TravelReviewView(generics.ListCreateAPIView, generics.DestroyAPIView):
+class TravelReviewCreateView(generics.ListCreateAPIView):
     queryset = TravelReview.objects.all()
     serializer_class = CreateTravelReviewSerializer
