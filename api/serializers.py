@@ -23,7 +23,7 @@ class CustomUserDetailsSerializer(UserDetailsSerializer):
     class Meta(UserDetailsSerializer.Meta):
         fields = UserDetailsSerializer.Meta.fields + ('gender','birthday',)
 
-class CreateTravelReviewSerializer(serializers.ModelSerializer):
+class TravelReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = TravelReview
         fields = ['username', 'title', 'place_id', 'review', 'rating', 'date']

@@ -1,4 +1,4 @@
-from .serializers import CreateTravelReviewSerializer
+from .serializers import TravelReviewSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
@@ -14,11 +14,11 @@ class TokenView(APIView):
 
 class TravelReviewCreateView(generics.ListCreateAPIView):
     queryset = TravelReview.objects.all()
-    serializer_class = CreateTravelReviewSerializer
+    serializer_class = TravelReviewSerializer
 
-class TravelReviewRetrieveView(generics.mixins.RetrieveModelMixin):
-    def retrieve(self, request, *args, **kwargs):
-        print(kwargs['travel_id'])
-        instance = self.get_object()
-        serializer = self.get_serializer(instance)
-        return Response(serializer.data) 
+class TravelReviewRetrieveView(generics.ListAPIView):
+    serializer_class = TravelReviewSerializer
+    lookup_field = 'username_id'
+
+    def get_queryset(self):
+        return TravelReview.objects.filter(username_id=self.kwargs[self.lookup_field])
