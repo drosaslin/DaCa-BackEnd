@@ -15,3 +15,10 @@ class TokenView(APIView):
 class TravelReviewCreateView(generics.ListCreateAPIView):
     queryset = TravelReview.objects.all()
     serializer_class = CreateTravelReviewSerializer
+
+class TravelReviewRetrieveView(generics.mixins.RetrieveModelMixin):
+    def retrieve(self, request, *args, **kwargs):
+        print(kwargs['travel_id'])
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data) 
